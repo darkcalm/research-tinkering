@@ -1,0 +1,9 @@
+venv/
+.venv/
+.DS_Store
+*.log
+*.aux
+*.blg
+*.bbl
+*.bcf
+*.pdf

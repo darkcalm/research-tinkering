@@ -1,0 +1,208 @@
+## Deliverables
+- `deliverables/fa1.tex` - LaTeX template for the proposal
+- `deliverables/fa1.bib` - Bibliography file for references
+
+## Tasks (refer to @.cursor/rules/process-task-list before executing)
+
+- [x] 1.0 Project Setup and Initial Planning
+  - [x] 1.1 Group Formation and Communication Setup
+    - [x] 1.1.1 Form group of 3 students by March 24 deadline
+    - [x] 1.1.2 Establish communication channels (email, messaging)
+    - [x] 1.1.3 Create shared document repository
+    - [x] 1.1.4 Set up version control for LaTeX files
+    - [x] 1.1.5 Define roles and responsibilities
+  - [x] 1.2 Project Framework Setup
+    - [x] 1.2.1 Review and understand grading criteria (A-F scale)
+    - [x] 1.2.2 Analyze A-grade requirements
+    - [x] 1.2.3 Create project charter
+    - [x] 1.2.4 Define quality metrics
+    - [x] 1.2.5 Establish review process
+  - [x] 1.3 Technical Environment Setup
+    - [x] 1.3.1 Install LaTeX distribution
+    - [x] 1.3.2 Configure bibliography management
+    - [x] 1.3.3 Set up template structure
+    - [x] 1.3.4 Configure version control
+    - [x] 1.3.5 Test compilation process
+  - [x] 1.4 Timeline and Milestone Planning
+    - [x] 1.4.1 Create detailed Gantt chart
+    - [x] 1.4.2 Define key milestones
+    - [x] 1.4.3 Allocate buffer time
+  - [x] 1.5 Document Mentors Research Expertise
+
+- [x] 2.0 Initial Literature Review and Problem Exploration (ILO1)
+  - [x] 2.1 Initial Literature Search (informed by sources/intent_documents)
+    - [x] 2.1.1 Define initial search protocol
+      - [x] 2.1.1.1 Document human researcher's initial interests and intents
+      - [x] 2.1.1.2 Record any existing literature the researcher has found relevant
+      - [x] 2.1.1.3 Refine initial search parameters and scope based on researcher input
+    - [x] 2.1.2 Identify key databases
+    - [x] 2.1.3 Develop preliminary search strings
+    - [x] 2.1.4 Create initial inclusion/exclusion criteria
+    - [x] 2.1.5 Document search methodology
+    - [x] 2.1.6 Refer to detailed search execution instructions and literature analysis in docs/search-protocol-initial.md
+    - [x] 2.1.7 Develop prioritized search terms based on initial literature analysis
+  - [x] 2.2 Preliminary Literature Review (outsourced to Perplexity, documented in sources/initial_literature_search)
+    - [x] 2.2.1 Execute initial database searches
+    - [x] 2.2.2 Screen abstracts and titles
+    - [x] 2.2.3 Review key papers (broken down by Perplexity)
+      - [x] 2.2.3.1 Obtain full text
+      - [x] 2.2.3.2 Read and evaluate full text
+      - [x] 2.2.3.3 Identify key findings
+    - [x] 2.2.4 Extract preliminary data
+    - [x] 2.2.5 Create initial literature review
+  - [x] 2.3 Initial Problem Exploration (outsourced to Perplexity, documented in sources/initial_problem_exploration)
+    - [x] 2.3.1 Identify potential research areas
+    - [x] 2.3.2 Map current research state
+    - [x] 2.3.3 Note preliminary gaps
+    - [x] 2.3.4 Document initial questions
+    - [x] 2.3.5 Prepare for problem formulation
+
+- [x] 3.0 Research Problem and Questions Formulation (ILO2)
+  - [x] 3.1 Critically Evaluate Initial Findings and Orient Research Direction
+    - [x] 3.1.1 Identify potential novel research angles and cross-domain connections
+      - [x] 3.1.1.1 Analyze initial findings for implicit connections
+      - [x] 3.1.1.2 Brainstorm novel combinations
+      - [x] 3.1.1.3 Evaluate against research requirements and ILOs
+      - [x] 3.1.1.4 Document potential orientations
+    - [x] 3.1.2 Select and justify the primary research direction
+  - [x] 3.2 Problem Definition
+    - [x] 3.2.1 Articulate specific problem
+    - [x] 3.2.2 Justify significance
+    - [x] 3.2.3 Define scope
+    - [x] 3.2.4 Connect to sustainability
+    - [x] 3.2.5 Align with SDGs
+  - [x] 3.3 Research Objectives
+    - [x] 3.3.1 Define overall aim
+    - [x] 3.3.2 Develop specific objectives
+    - [x] 3.3.3 Ensure measurability
+    - [x] 3.3.4 Align with gaps
+    - [x] 3.3.5 Validate against ILO2
+  - [x] 3.4 Research Questions
+    - [x] 3.4.1 Formulate primary question
+    - [x] 3.4.2 Develop sub-questions
+    - [x] 3.4.3 Apply PICO/PEO framework
+    - [x] 3.4.4 Ensure answerability
+    - [x] 3.4.5 Test against gaps
+  - [x] 3.5 Scope and Limitations
+    - [x] 3.5.1 Define boundaries
+    - [x] 3.5.2 Identify constraints
+    - [x] 3.5.3 Document assumptions
+    - [x] 3.5.4 Justify exclusions
+    - [x] 3.5.5 Address limitations
+  - [x] 3.6 Theoretical Framework
+    - [x] 3.6.1 Map key concepts
+    - [x] 3.6.2 Define relationships
+    - [x] 3.6.3 Create visual representation
+    - [x] 3.6.4 Prepare for literature validation
+      - [x] 3.6.4.1 Identify validation criteria
+      - [x] 3.6.4.2 Define validation approach
+      - [x] 3.6.4.3 Document validation requirements
+    - [x] 3.6.5 Document framework assumptions
+      - [x] 3.6.5.1 List theoretical assumptions
+      - [x] 3.6.5.2 Document concept boundaries
+      - [x] 3.6.5.3 Note validation needs
+
+- [x] 4.0 Focused Literature Review (ILO1)
+  - [x] 4.1 Semantic Literature Search
+    - [x] 4.1.1 Elicit.com Search
+      - [x] 4.1.1.1 Develop Elicit.com search strategy
+      - [x] 4.1.1.2 Document search results
+      - [x] 4.1.1.3 Export relevant papers information
+      - [x] 4.1.1.4 Fetch Elicit.com papers
+      - [x] 4.1.1.5 Convert Elicit.com papers to markdown
+    - [x] 4.1.2 Semantic Scholar API Integration
+      - [x] 4.1.2.1 Set up API access
+      - [x] 4.1.2.2 Develop search script
+      - [x] 4.1.2.3 Export relevant papers information
+      - [x] 4.1.2.4 Iteration N (if needed)
+    - [x] 4.1.3 Develop Relevance Criteria
+    - [x] 4.1.4 Test Relevance Criteria
+    - [x] 4.1.5 Apply relevance criteria to Semantic Scholar API papers
+    - [x] 4.1.6 Fetch relevant Semantic Scholar API papers
+    - [x] 4.1.7 Iterate Academic Search Script
+      - [x] 4.1.7.1 Optimize PDF Discovery
+      - [x] 4.1.7.2 Implement Relevance-Based Dynamic Search Strategy (CORE API)
+      - [x] 4.1.7.3 Fetch relevant CORE API papers
+      - [x] 4.1.7.4 Refined focused run for Angle 6: Human factors, communication gaps, and AI Agent Protocol opportunities # Completed, but 0 papers met download threshold
+    - [x] 4.1.8 Industry search for Angle 6
+      - [x] 4.1.8.1 Define strategy and scope for industry search
+      - [x] 4.1.8.2 Identify key industry search channels and sources
+      - [x] 4.1.8.3 Develop Elicit.com search strategy
+      - [x] 4.1.8.4 Export relevant papers information
+      - [x] 4.1.8.5 Convert Elicit.com papers to markdown
+      - [x] 4.1.8.6 Analyze and cross-referencing
+  - [x] 4.2 Focused Literature Analysis
+    - [x] 4.2.1 Literature Review
+      - [x] 4.2.1.1 Identify patterns and trends across papers 
+      - [x] 4.2.1.2 Document key findings and insights
+    - [x] 4.2.2 Update theoretical framework
+    - [x] 4.2.3 Create visual representation
+    - [x] 4.2.4 Refine research questions and hypotheses
+  - [x] 4.3 Research Gap Analysis
+    - [x] 4.3.1 Develop Elicit.com search strategy
+    - [x] 4.3.2 Export relevant papers information
+    - [x] 4.3.3 Convert Elicit.com papers to markdown
+    - [x] 4.3.4 Identify theoretical gaps
+    - [x] 4.3.5 Map methodological limitations
+    - [x] 4.3.6 Document practical needs
+
+- [x] 5.0 Methodology Development (ILO3)
+  - [x] 5.1 Methodology Research
+    - [x] 5.1.1 Identify relevant methodologies
+    - [x] 5.1.2 Document quantitative approaches
+    - [x] 5.1.3 Analyze qualitative methodologies
+    - [x] 5.1.4 Evaluate mixed methodologies
+    - [x] 5.1.5 Research emerging methodologies
+  - [x] 5.2 Methodology Comparison
+    - [x] 5.2.1 Create comparison matrix
+    - [x] 5.2.2 Evaluate strengths/limitations
+    - [x] 5.2.3 Assess resource requirements
+    - [x] 5.2.4 Analyze feasibility
+  - [x] 5.3 Methodology Selection
+    - [x] 5.3.1 Justify research methodology
+    - [x] 5.3.2 Address limitations
+    - [x] 5.3.3 Outline rough timeline
+    - [x] 5.3.4 Create workflow diagram
+
+- [x] 6.0 Ethics and Sustainability Integration (ILO4)
+  - [x] 6.1 Ethics Assessment
+    - [x] 6.1.1 Review guidelines
+    - [x] 6.1.2 Identify ethical concerns
+    - [x] 6.1.3 Address data privacy
+    - [x] 6.1.4 Consider consent requirements
+    - [x] 6.1.5 Document approval needs
+  - [x] 6.2 Sustainability Analysis
+    - [x] 6.2.1 Map environmental aspects
+    - [x] 6.2.2 Analyze social impacts
+    - [x] 6.2.3 Evaluate economic factors
+    - [x] 6.2.4 Assess equity aspects
+    - [x] 6.2.5 Evaluate policy implications
+    - [x] 6.2.6 Develop mitigation strategies
+
+- [x] 7.0 Risk Assessment and Timeline Planning
+  - [x] 7.1 Risk Identification
+    - [x] 7.1.1 Brainstorm potential risks
+    - [x] 7.1.2 Categorize risks
+    - [x] 7.1.3 Create risk register
+    - [x] 7.1.4 Assess likelihood and impact
+    - [x] 7.1.5 Prioritize risks
+  - [x] 7.2 Risk Mitigation
+    - [x] 7.2.1 Develop mitigation strategies
+    - [x] 7.2.2 Allocate resources
+
+- [x] 8.0 Final Proposal Compilation and Submission (Deliverable)
+  - [x] 8.1 Document Finalization
+    - [x] 8.1.1 Allocate word count for sections
+    - [x] 8.1.2 Map main references for sections
+    - [x] 8.1.3 Incorporate visual planning
+    - [x] 8.1.4 List all potential citations
+    - [x] 8.1.5 Develop first draft for sections
+    - [x] 8.1.6 Incorporate visual planning
+    - [x] 8.1.7 Ensure draft consistent with intent
+  - [x] 8.2 Quality Assurance (iterative)
+    - [x] 8.2.1 Proofread entire document
+    - [x] 8.2.2 Review against grading criteria
+    - [x] 8.2.3 Validate ILO compliance
+  - [x] 8.3 Submission Preparation (outside of repo)
+    - [x] 8.3.1 Export final PDF (on Overleaf, as we encountered problems when rendering the figures in main.tex locally)
+    - [x] 8.3.2 Submit by deadline (screenshot and send to group)
