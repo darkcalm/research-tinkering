@@ -1,0 +1,30 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Task List Management
+
+Guidelines for managing task lists to track PRD completion.
+
+## AI Instructions
+
+1. **After Task Execution:**
+    - If all subtasks under a parent are done, mark the parent as done.
+    - Execute one sub-task at a time. Await user "yes" or "y" before marking complete and moving to the next.
+    - Do not create new tasks without user permission.
+
+2. **Before Task Execution:**
+    - Review file names in `util/`, `data/`, and `docs/`.
+    - Read task-relevant files (current and prior).
+    - Employ best practices for the task type.
+
+3. **During Task Execution:**
+    - Use standard directory locations:
+        - `archive/`: Reference code, deleted items.
+        - `external/`: User inputs, API outputs.
+        - `data/`: Processed data.
+        - `util/`: Scripts and utilities.
+        - `docs/`: Summaries and documentation.
+    - Create data sources and processing scripts in `data/` and `util/` respectively.
+    - Scripts in `util/` should take file paths as arguments to minimize hardcoded data.
