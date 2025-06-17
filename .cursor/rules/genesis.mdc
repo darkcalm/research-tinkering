@@ -175,3 +175,22 @@ The generation is an interactive, multi-step process that requires user confirma
 
 1.  **Announce Completion:** Inform the user that all three rule files have been generated successfully.
 2.  **Suggest Next Steps:** Suggest the user can now start a new project by invoking the `@/rules/create-prd.mdc` rule.
+
+### Addendum: Interrupting the Process
+
+This process is designed to be interactive and adaptable. At any point, the user can issue direct commands to the AI assistant to alter the workflow. This allows for real-time adjustments based on the user's insights or changing requirements.
+
+These interruptions are not part of the formal, step-by-step process but are a core feature of the collaborative workflow.
+
+**General Guidance for the AI:**
+*   Periodically, after completing a significant step, remind the user of the interactive capabilities described here (e.g., "As a reminder, you can guide the process with direct commands like 'archive this file' or 'document this decision'.").
+
+**Examples of Interrupt Commands:**
+
+*   **To archive an artifact:** If a generated file like a PRD is not suitable, you can instruct the AI to move it to an archive directory.
+    > *"throw current prd into archives"*
+*   **To document a key decision:** To ensure important instructions are not lost, you can ask the AI to save your prompt for traceability. The log entry should include a timestamp and a list of the files that were modified by the prompt.
+    > *"document this prompt for tractability"*
+*   **To change direction:** If you want to revise a goal or change the scope, you can state your new requirements directly. The AI will adapt its subsequent actions accordingly.
+
+By using such commands, you can guide the AI more dynamically, ensuring the final output aligns perfectly with your vision.
