@@ -14,6 +14,8 @@ import arxiv # type: ignore
 import hashlib
 import difflib
 from typing import Optional, Dict, List, Tuple, Any, Set, Union
+import os
+import sys
 
 # --- Configuration ---\"
 WORKSPACE_ROOT = Path(__file__).resolve().parent.parent
@@ -210,7 +212,14 @@ def get_from_core(doi: Optional[str] = None, title: Optional[str] = None) -> Opt
         else:
             return None
             
-        search_url = f"https://core.ac.uk/api-v2/search/works?q={query}&apiKey=FeJVa6KG3ISf8iqN7sZw9RCHBgQPTxW2"
+        # API key for CORE
+        # It's recommended to set this as an environment variable
+        api_key = os.getenv("CORE_API_KEY")
+        if not api_key:
+            print("Error: CORE_API_KEY environment variable not set.")
+            sys.exit(1)
+
+        search_url = f"https://core.ac.uk/api-v2/search/works?q={query}&apiKey={api_key}"
         
         logger.debug(f"[CORE] Querying for: {query} using API key.")
         

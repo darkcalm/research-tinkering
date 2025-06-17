@@ -10,6 +10,7 @@ import os
 import argparse
 from typing import List, Dict, Any, Optional
 from collections import Counter
+import sys
 
 # Basic list of English stopwords
 STOPWORDS = set([
@@ -35,7 +36,7 @@ STOPWORDS = set([
 class IndustryCoreSearch: # MODIFIED CLASS NAME
     def __init__(
         self,
-        api_key: Optional[str] = None,
+        api_key: str,
         iteration: int = 1 
     ):
         self.iteration = iteration
@@ -536,10 +537,10 @@ class IndustryCoreSearch: # MODIFIED CLASS NAME
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run an industry-focused dynamic search session using the CORE API.") # MODIFIED description
+    parser = argparse.ArgumentParser(description="Run an industry-focused dynamic search session using the CORE API.")
     parser.add_argument("--session_id", type=int, default=1, help="Search session ID. Default: 1")
     parser.add_argument(
-        "--relevance_criteria_path", type=str, default=None, 
+        "--relevance_criteria_path", type=str, default=None,
         help="Path to relevance criteria JSON. Relative to workspace root or absolute. If None, uses a general default."
     )
     parser.add_argument("--dynamic_iterations", type=int, default=1, help="Number of dynamic query iterations. Default: 1 (for shorter industry exploration runs)")
@@ -554,7 +555,6 @@ def main():
 
     session_id = args.session_id
     
-    # MODIFIED default relevance criteria path and warning
     default_criteria_path = Path(__file__).resolve().parent.parent / "sources" / "4.1.3-relevance-criteria" / "relevance_criteria.json"
     
     if args.relevance_criteria_path:
@@ -565,22 +565,20 @@ def main():
         logging.warning(f"No specific relevance_criteria_path provided. Using general default: {final_criteria_path.relative_to(Path(__file__).resolve().parent.parent)}")
         logging.warning("Consider creating and using a relevance criteria file tailored for industry search for better results.")
 
-    core_api_key_env = os.getenv("CORE_API_KEY") 
-    provided_api_key = "FeJVa6KG3ISf8iqN7sZw9RCHBgQPTxW2" # User provided key
-    final_api_key_to_use = core_api_key_env if core_api_key_env else provided_api_key
-
-    if not final_api_key_to_use: logging.error("FATAL: CORE_API_KEY not set and no fallback. Exiting.") # Should not happen with fallback
-    elif not core_api_key_env and provided_api_key: logging.warning(f"Using provided API key for CORE (CORE_API_KEY env var not set).")
-    elif core_api_key_env: logging.info(f"Using CORE_API_KEY from environment variable.")
-
-    searcher = IndustryCoreSearch(api_key=final_api_key_to_use, iteration=session_id)
+    # Get CORE API key from environment
+    api_key = os.getenv("CORE_API_KEY")
+    if not api_key:
+        print("Error: CORE_API_KEY environment variable not set.")
+        sys.exit(1)
+    
+    logging.info("Using CORE_API_KEY from environment variable.")
+    
+    searcher = IndustryCoreSearch(api_key=api_key, iteration=session_id)
     searcher.relevance_criteria_path_arg = str(final_criteria_path.relative_to(searcher.workspace_root))
-    searcher.relevance_criteria = searcher._load_relevance_criteria(final_criteria_path) 
+    searcher.relevance_criteria = searcher._load_relevance_criteria(final_criteria_path)
     
     logging.info(f"Industry Focused CORE API Search Script - Session {session_id}")
-    if not final_api_key_to_use: logging.critical("CRITICAL: Running without CORE API key - this will likely fail.")
 
-    # MODIFIED Initial Queries for Industry Focus (examples from docs/4.1.8.3) - SIMPLIFIED FOR EDIT
     initial_queries_config = {
         "operator_tasks_lifecycle": [
             'DER installation technician AND daily tasks',

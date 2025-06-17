@@ -14,6 +14,8 @@ import os
 import argparse
 from typing import List, Dict, Any, Optional
 from collections import Counter
+import sys
+import uuid
 
 # Basic list of English stopwords
 STOPWORDS = set([
@@ -818,37 +820,24 @@ def main():
     else:
         final_criteria_path = default_criteria_path
 
-    # API Key for CORE
-    core_api_key_env = os.getenv("CORE_API_KEY") 
-    # User provided key takes precedence if script arg is added in future, for now, env var
-    # For this run, we will use the one hardcoded if env var is not set, for immediate testing
-    # This is not best practice for production but useful for this interactive session.
+    # Use a a session ID for the iteration
+    session_id = str(uuid.uuid4())
+
+    # Get CORE API key from environment
+    api_key = os.getenv("CORE_API_KEY")
+    if not api_key:
+        print("Error: CORE_API_KEY environment variable not set.")
+        sys.exit(1)
+
+    # Use the provided API key
+    searcher = CoreApiSearch(api_key=api_key, iteration=session_id)
     
-    provided_api_key = "FeJVa6KG3ISf8iqN7sZw9RCHBgQPTxW2" # Key from user
-
-    final_api_key_to_use = core_api_key_env if core_api_key_env else provided_api_key
-
-    if not final_api_key_to_use:
-        logging.error("FATAL: CORE_API_KEY environment variable not set and no fallback provided. Exiting.")
-        # In a real script, might exit here or raise error
-        # For now, rely on the hardcoded one above if env is missing.
-        # The line below will use the hardcoded `provided_api_key` if `core_api_key_env` is None.
-        # This means if CORE_API_KEY is not set, it uses the one from the prompt.
-    elif not core_api_key_env and provided_api_key:
-        logging.warning(f"Using provided API key for CORE as CORE_API_KEY env var is not set.")
-    elif core_api_key_env:
-        logging.info(f"Using CORE_API_KEY from environment variable.")
-
-
-    searcher = CoreApiSearch( # Use new class
-        api_key=final_api_key_to_use, # Pass the determined API key
-        iteration=session_id 
-    )
+    # Use the provided relevance criteria
     searcher.relevance_criteria_path_arg = str(final_criteria_path.relative_to(searcher.workspace_root))
     searcher.relevance_criteria = searcher._load_relevance_criteria(final_criteria_path) 
     
     logging.info(f"CORE API Dynamic Search Script - Session {session_id}") # Updated log
-    if not final_api_key_to_use: # Should not happen with fallback
+    if not api_key: # Should not happen with fallback
          logging.critical("CRITICAL: Running without CORE API key - this will likely fail.")
 
 
