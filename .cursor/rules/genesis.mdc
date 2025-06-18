@@ -143,31 +143,35 @@ The generation is an interactive, multi-step process that requires user confirma
     ---
     **Content for `process-task-list.mdc`**
     ```markdown
-    # Task List Management
+    # Rule: Task List Management
 
-    Guidelines for managing task lists to track PRD completion.
+    This rule defines the lifecycle for processing each task to ensure consistency, clarity, and robust documentation.
 
-    ## AI Instructions
+    ## Task Lifecycle
 
-    1. **After Task Execution:**
-        - If all subtasks under a parent are done, mark the parent as done.
-        - Execute one sub-task at a time. Await user "yes" or "y" before marking complete and moving to the next.
-        - Do not create new tasks without user permission.
+    ### Phase 1: Task Initiation
+    1.  **Review Context:** Before starting a task, review relevant project files (especially in `docs/`, `util/`, and `data/`) and the history in `docs/task-log.md` to gather full context.
+    2.  **Propose Action:** Present a clear, actionable proposal for the current task.
+    3.  **Format Output:** The proposal must be prefixed with the task number (e.g., "1.2: [Proposal]").
 
-    2. **Before Task Execution:**
-        - Review file names in `util/`, `data/`, and `docs/`.
-        - Read task-relevant files (current and prior).
-        - Employ best practices for the task type.
+    ### Phase 2: Task Execution
+    1.  **Await Confirmation:** **Do not proceed** without explicit user confirmation ("yes" or "y").
+    2.  **Execute:** Perform the task, adhering to the following guidelines:
+        *   **Best Practices:** Employ standard best practices for the task type.
+        *   **Directory Standards:** Use the standard project directory locations (`util/` for scripts, `data/` for data, `docs/` for documentation, `archive/` for old files).
+        *   **Security:** Ensure secrets are loaded from environment variables or a secure configuration system, never hardcoded.
 
-    3. **During Task Execution:**
-        - Use standard directory locations:
-            - `archive/`: Reference code, deleted items.
-            - `external/`: User inputs, API outputs.
-            - `data/`: Processed data.
-            - `util/`: Scripts and utilities.
-            - `docs/`: Summaries and documentation.
-        - Create data sources and processing scripts in `data/` and `util/` respectively.
-        - Scripts in `util/` should take file paths as arguments to minimize hardcoded data.
+    ### Phase 3: Task Completion
+    1.  **Update Task List:** Mark the just-completed task as `[x]` in the task list file.
+    2.  **Log Decision:** Append a record of the completed task to `docs/task-log.md`. The entry **must** include:
+        *   An ISO-8601 timestamp.
+        *   The task number.
+        *   A one-sentence summary of the decision or output.
+        *   A list of all files created or modified.
+        *   The full user prompt that initiated the task, if it was a direct command that modified the workflow.
+    3.  **Manage Parent Tasks:** If all sub-tasks under a parent are now complete, mark the parent task as `[x]` as well.
+    4.  **Manage Scope:** Do not create new tasks or modify the scope of existing tasks without explicit user permission.
+    5.  **Proceed:** Move to the next task.
     ```
     ---
 
@@ -189,7 +193,7 @@ These interruptions are not part of the formal, step-by-step process but are a c
 
 *   **To archive an artifact:** If a generated file like a PRD is not suitable, you can instruct the AI to move it to an archive directory.
     > *"throw current prd into archives"*
-*   **To document a key decision:** To ensure important instructions are not lost, you can ask the AI to save your prompt for traceability. The log entry should include a timestamp and a list of the files that were modified by the prompt.
+*   **To document a key decision:** To ensure important instructions are not lost, you can ask the AI to save your prompt for traceability. The AI will add it to the log entry for the current task.
     > *"document this prompt for tractability"*
 *   **To change direction:** If you want to revise a goal or change the scope, you can state your new requirements directly. The AI will adapt its subsequent actions accordingly.
 

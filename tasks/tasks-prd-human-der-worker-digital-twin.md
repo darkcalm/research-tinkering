@@ -13,12 +13,12 @@
 
 ## Tasks (refer to @/rules/process-task-list before executing)
 
-- [ ] 1.0 Phase 1: Foundational Research and Scoping
-  - [ ] 1.1 Define the specific operator role for the minimal proof-of-concept (POC).
-  - [ ] 1.2 Define the single, consequential behavior to be modeled in the POC.
-  - [ ] 1.3 Identify the specific tool/resource for the MCP interaction (e.g., a mock knowledge base file).
-  - [ ] 1.4 Outline the simple A2A/ACP interaction scenario (e.g., one agent asks for status, the other responds).
-  - [ ] 1.5 Create and populate `docs/research_scope.md` with these decisions.
+- [x] 1.0 Phase 1: Foundational Research and Scoping
+  - [x] 1.1 Define the specific operator role for the minimal proof-of-concept (POC).
+  - [x] 1.2 Define the single, consequential behavior to be modeled in the POC.
+  - [x] 1.3 Identify the specific tool/resource for the MCP interaction (e.g., a mock knowledge base file).
+  - [x] 1.4 Outline the simple A2A/ACP interaction scenario (e.g., one agent asks for status, the other responds).
+  - [x] 1.5 Create and populate `docs/research_scope.md` with these decisions.
 
 - [ ] 2.0 Phase 2: Framework Architecture and Design
   - [ ] 2.1 Design the core `Agent` class structure, including its properties and methods.
